@@ -16,17 +16,19 @@ import Generating from "./Generating";
 
 const Services = () => {
   const { videoUrl } = useContext(VideoContext);
+  const { AnimeName0, TimeStamp0, Episode0, AniList0 } = useContext(VideoContext);
 
-  useEffect(() => {
-    if (videoUrl) {
-      let container = document.getElementById('main_player');
-      let video = document.createElement('video');
-      video.src = videoUrl;
-      video.loop = true;
-      container.appendChild(video);
-      video.play();
-    }
-  }, [videoUrl]); 
+
+  // useEffect(() => {
+  //   if (videoUrl) {
+  //     let container = document.getElementById('main_player');
+  //     let video = document.createElement('video');
+  //     video.src = videoUrl;
+  //     video.loop = true;
+  //     container.appendChild(video);
+  //     // video.play();
+  //   }
+  // }, [videoUrl]); 
   return (
     <Section id="how-to-use">
       <div className="container">
@@ -35,10 +37,16 @@ const Services = () => {
           text="AnimeLens go brrrr "
         />
 
+          <Heading
+          title={`Anime Name: ${AnimeName0}`}
+          text={`TimeStamp: ${TimeStamp0} sec, Episode: ${Episode0} , AniList: ${AniList0}`} 
+          
+        />
+
         <div className="relative">
-          <div id = "main_player" className="relative z-1 flex items-center h-[39rem] mb-5 p-8 border border-n-1/10 rounded-3xl overflow-hidden lg:p-20 xl:h-[46rem]">
+          <div id="main_player" className="relative z-1 flex items-center h-[20rem] mb-5 p-4 border border-n-1/10 rounded-3xl overflow-hidden lg:p-10 xl:h-[30rem]">
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none md:w-3/5 xl:w-auto">
-                <video
+              <video
                 className="w-full h-full object-cover md:object-right"
                 src={videoUrl}
                 loop
@@ -64,7 +72,6 @@ const Services = () => {
               </ul>
             </div>
 
-            <Generating className="absolute left-4 right-4 bottom-4 border-n-1/10 border lg:left-1/2 lg-right-auto lg:bottom-8 lg:-translate-x-1/2" />
           </div>
 
           <div className="relative z-1 grid gap-5 lg:grid-cols-2">

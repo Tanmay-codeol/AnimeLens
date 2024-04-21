@@ -13,13 +13,18 @@ import { Route, Routes } from 'react-router-dom';
 
 
 const App = () => {
+  // const [videoUrl, setVideoUrl] = useState('');
   const [videoUrl, setVideoUrl] = useState('');
+  const [AnimeName0, setAnimeName] = useState('');
+  const [TimeStamp0, setTimeStamp] = useState('');
+  const [Episode0, setEpisode] = useState('');
+  const [AniList0, setAniList] = useState('');
 
   return (
     <>
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
         <Header />
-        <VideoContext.Provider value={{ videoUrl, setVideoUrl }}>
+        <VideoContext.Provider value={{ videoUrl, setVideoUrl, AnimeName0, setAnimeName, TimeStamp0 , setTimeStamp ,Episode0, setEpisode,AniList0,setAniList }}>
           <Routes>
             <Route path="/" element={<><Hero /><Benefits /><Pricing /><Footer /></>} />
             <Route path="/services" element={<Services />} />

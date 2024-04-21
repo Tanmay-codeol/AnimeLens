@@ -25,10 +25,12 @@ let Responsee = {
 
 const Hero = () => {
   const parallaxRef = useRef(null);
-  
+
   
   const navigate = useNavigate();
   const { setVideoUrl } = useContext(VideoContext);
+  const { setAnimeName, setTimeStamp, setEpisode, setAniList } = useContext(VideoContext);
+
   const handleFileChange = async (event) => {
     const file = event.target.files[0];
     const formData = new FormData();
@@ -43,9 +45,19 @@ const Hero = () => {
     Responsee = data;
     console.log(data);
     let videoUrl = Responsee.result[0].video;
-    console.log(videoUrl);
+    let AnimeName0 = Responsee.result[0].filename;
+    let TimeStamp0 = Responsee.result[0].from;
+    let Episode0 = Responsee.result[0].episode;
+    let AniList0 = Responsee.result[0].anilist;
+
+    console.log(AniList0, Episode0, TimeStamp0, AnimeName0, videoUrl);
     setVideoUrl(videoUrl);
+    setAnimeName(AnimeName0);
+    setTimeStamp(TimeStamp0);
+    setEpisode(Episode0);
+    setAniList(AniList0);
     navigate("/services");
+
   
     // let container = document.getElementById('videoplayer');
     // let video = document.createElement('video');
