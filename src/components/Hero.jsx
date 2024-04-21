@@ -87,6 +87,13 @@ const Hero = () => {
             Upload a Snap &nbsp;and&nbsp;Find the Anime using{`  `}
             <span className="inline-block relative">
                AnimeLens{" "}
+               <img
+                src={curve}
+                className="absolute top-full left-0 w-full xl:-mt-2"
+                width={624}
+                height={28}
+                alt="Curve"
+              />
                
                      
                     
