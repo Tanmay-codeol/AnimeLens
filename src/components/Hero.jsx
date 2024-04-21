@@ -9,46 +9,50 @@ import Generating from "./Generating";
 import Notification from "./Notification";
 import CompanyLogos from "./CompanyLogos";
 import VideoPlayer from './VideoPlayer';
+import { useContext } from "react";
+import VideoContext from "./design/videoContext";
 
 
 
 
 let Responsee = {
-
-};
-
-
-const handleFileChange = async (event) => {
-  const file = event.target.files[0];
-  const formData = new FormData();
-  formData.append('image', file);
-
-  const response = await fetch('https://api.trace.moe/search', {
-    method: 'POST',
-    body: formData,
-  });
-
-  const data = await response.json();
-  Responsee = data;
-  console.log(data);
-  let videoUrl = Responsee.result[0].video;
-  console.log(videoUrl);
-
-  let container = document.getElementById('videoplayer');
-  let video = document.createElement('video');
-  video.src = videoUrl;
   
-  video.loop = true;
-  container.appendChild(video);
-  video.play();
-
-
 };
+
+
 
 const Hero = () => {
   
   const parallaxRef = useRef(null);
-
+  
+  const { setVideoUrl } = useContext(VideoContext);
+  const handleFileChange = async (event) => {
+    const file = event.target.files[0];
+    const formData = new FormData();
+    formData.append('image', file);
+  
+    const response = await fetch('https://api.trace.moe/search', {
+      method: 'POST',
+      body: formData,
+    });
+  
+    const data = await response.json();
+    Responsee = data;
+    console.log(data);
+    let videoUrl = Responsee.result[0].video;
+    console.log(videoUrl);
+    setVideoUrl(videoUrl);
+  
+    // let container = document.getElementById('videoplayer');
+    // let video = document.createElement('video');
+    // video.src = videoUrl;
+    
+    // video.loop = true;
+    // container.appendChild(video);
+    // video.play();
+  
+  
+  };
   return (
     <Section
       className="pt-[12rem] -mt-[5.25rem]"

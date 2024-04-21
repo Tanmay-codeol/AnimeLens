@@ -7,18 +7,30 @@ import Hero from "./components/Hero";
 import Pricing from "./components/Pricing";
 import Roadmap from "./components/Roadmap";
 import Services from "./components/Services";
+import { useRef, useState } from "react";
+import VideoContext from "./components/design/videoContext";
+
 
 const App = () => {
+  const [videoUrl, setVideoUrl] = useState('');
+
   return (
     <>
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
         <Header />
+        <VideoContext.Provider value={{ videoUrl, setVideoUrl }}>
         <Hero />
         <Benefits />
-        <Collaboration />
-        <Services />
+
+
+
+
+        {/* <Collaboration /> */}
+        {/*for the next page */}
+        <Services  />  
+        </VideoContext.Provider>
         <Pricing />
-        <Roadmap />
+        {/* <Roadmap /> */}
         <Footer />
       </div>
 
