@@ -16,9 +16,27 @@ import Generating from "./Generating";
 
 const Services = () => {
   const { videoUrl } = useContext(VideoContext);
+  const videoRef = useRef();
   const { AnimeName0, TimeStamp0, Episode0, AniList0 } = useContext(VideoContext);
 
-
+  useEffect(() => {
+    let blobUrl;
+  
+    fetch(videoUrl)
+      .then(response => response.blob())
+      .then(blob => {
+        blobUrl = URL.createObjectURL(blob);
+        videoRef.current.src = blobUrl;
+      })
+      .catch(console.error);
+  
+    return () => {
+      // Clean up the blob URL
+      if (blobUrl) {
+        URL.revokeObjectURL(blobUrl);
+      }
+    };
+  }, [videoUrl]);
   // useEffect(() => {
   //   if (videoUrl) {
   //     let container = document.getElementById('main_player');
@@ -45,14 +63,14 @@ const Services = () => {
 
         <div className="relative">
           <div id="main_player" className="relative z-1 flex items-center h-[20rem] mb-5 p-4 border border-n-1/10 rounded-3xl overflow-hidden lg:p-10 xl:h-[30rem]">
-            <div className="absolute top-0 left-0 w-full h-full md:w-3/5 xl:w-auto">
+              <div className="absolute top-0 left-0 w-full h-full md:w-3/5 xl:w-auto">
               <video
+                ref={videoRef}
                 className="w-full h-full object-cover md:object-right"
-                src={videoUrl} controls
+                controls
                 loop
                 autoPlay
                 muted
-                
               />
             </div>
 
@@ -73,7 +91,7 @@ const Services = () => {
                 ))}
               </ul>
             </div>
-
+                  
           </div>
           <br>
           </br>
