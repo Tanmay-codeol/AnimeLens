@@ -21,6 +21,9 @@ let Responsee = {
   
 };
 
+function cleanAnimeName(animeName) {
+  return animeName.replace(/(\[.*?\]|\(.*?\))/g, '').trim();
+}
 
 
 const Hero = () => {
@@ -52,7 +55,7 @@ const Hero = () => {
 
     console.log(AniList0, Episode0, TimeStamp0, AnimeName0, videoUrl);
     setVideoUrl(videoUrl);
-    setAnimeName(AnimeName0);
+    setAnimeName(cleanAnimeName(AnimeName0));
     setTimeStamp(TimeStamp0);
     setEpisode(Episode0);
     setAniList(AniList0);
