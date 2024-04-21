@@ -9,6 +9,7 @@ import Roadmap from "./components/Roadmap";
 import Services from "./components/Services";
 import { useRef, useState } from "react";
 import VideoContext from "./components/design/videoContext";
+import { Route, Routes } from 'react-router-dom';
 
 
 const App = () => {
@@ -19,23 +20,15 @@ const App = () => {
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
         <Header />
         <VideoContext.Provider value={{ videoUrl, setVideoUrl }}>
-        <Hero />
-        <Benefits />
-
-
-
-
-        {/* <Collaboration /> */}
-        {/*for the next page */}
-        <Services  />  
+          <Routes>
+            <Route path="/" element={<><Hero /><Benefits /><Pricing /><Footer /></>} />
+            <Route path="/services" element={<Services />} />
+          </Routes>
         </VideoContext.Provider>
-        <Pricing />
-        {/* <Roadmap /> */}
-        <Footer />
-      </div>
-
       <ButtonGradient />
+      </div>
     </>
+    
   );
 };
 

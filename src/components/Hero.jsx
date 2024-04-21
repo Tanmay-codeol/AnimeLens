@@ -11,6 +11,8 @@ import CompanyLogos from "./CompanyLogos";
 import VideoPlayer from './VideoPlayer';
 import { useContext } from "react";
 import VideoContext from "./design/videoContext";
+import { useNavigate } from "react-router-dom";
+
 
 
 
@@ -22,9 +24,10 @@ let Responsee = {
 
 
 const Hero = () => {
-  
   const parallaxRef = useRef(null);
   
+  
+  const navigate = useNavigate();
   const { setVideoUrl } = useContext(VideoContext);
   const handleFileChange = async (event) => {
     const file = event.target.files[0];
@@ -42,6 +45,7 @@ const Hero = () => {
     let videoUrl = Responsee.result[0].video;
     console.log(videoUrl);
     setVideoUrl(videoUrl);
+    navigate("/services");
   
     // let container = document.getElementById('videoplayer');
     // let video = document.createElement('video');
