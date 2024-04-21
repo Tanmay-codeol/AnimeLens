@@ -22,7 +22,8 @@ let Responsee = {
 };
 
 function cleanAnimeName(animeName) {
-  return animeName.replace(/(\[.*?\]|\(.*?\))/g, '').trim();
+  return animeName.replace(/(\[.*?\]|\(.*?\))/g, '').replace(/\.mp4/g, '').trim();
+
 }
 
 
@@ -95,7 +96,7 @@ const Hero = () => {
             Unleash the power of AnimeLens, Find your Anime with episode number
           </p>
 
-          <Button href="https://www.patreon.com/user?u=100692168" white >
+          <Button href="https://www.patreon.com/user/membership?u=100692168" white >
             Gimme money i am broke!!
           </Button>
           
