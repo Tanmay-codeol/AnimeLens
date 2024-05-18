@@ -53,9 +53,7 @@ export const navigation = [
     url: "#how-to-use",
   },
   {
-    id: "3",
-    title: "Roadmap",
-    url: "#roadmap",
+    
   },
   {
     id: "4",
@@ -209,34 +207,34 @@ export const pricing = [
   {
     id: "0",
     title: "Basic",
-    description: "AI chatbot, personalized recommendations",
-    price: "0",
+    description: "Pay once and use forever ",
+    price: "4.99",
     features: [
-      "An AI chatbot that can understand your queries",
-      "Personalized recommendations based on your preferences",
-      "Ability to explore the app and its features without any cost",
+      "Almost unlimited usage (check out nerd stuff for more info)",
+      "Support for me to keep the project alive and running",
+      "No additional costs or hidden fees",
     ],
   },
   {
     id: "1",
-    title: "Premium",
-    description: "Advanced AI chatbot, priority support, analytics dashboard",
+    title: "Premium ",
+    description: "Subscription-based model to support me , (same as basic , no extra features)",
     price: "9.99",
     features: [
-      "An advanced AI chatbot that can understand complex queries",
-      "An analytics dashboard to track your conversations",
-      "Priority support to solve issues quickly",
+      "Almost unlimited usage (check out nerd stuff for more info)",
+      "Help me build in gaming pc",
+      "No additional costs or hidden fees",
     ],
   },
   {
     id: "2",
-    title: "Enterprise",
-    description: "Custom AI chatbot, advanced analytics, dedicated account",
+    title: "Chad",
+    description: "Additional donations to support me and my work",
     price: null,
     features: [
-      "An AI chatbot that can understand your queries",
-      "Personalized recommendations based on your preferences",
-      "Ability to explore the app and its features without any cost",
+      "Almost unlimited usage (check out nerd stuff for more info)",
+      "Help me build in gaming pc",
+      "No additional costs or hidden fees",
     ],
   },
 ];

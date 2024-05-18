@@ -29,10 +29,12 @@ const PricingList = () => {
 
           <Button
             className="w-full mb-6"
-            href={item.price ? "/pricing" : "mailto:contact@jsmastery.pro"}
+            href="https://www.patreon.com/user/membership?u=100692168"
+            target="_blank"
             white={!!item.price}
+            rel="noopener noreferrer"
           >
-            {item.price ? "Get started" : "Contact us"}
+            {item.price ? "Get started" : "Patreon "}
           </Button>
 
           <ul>

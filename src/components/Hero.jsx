@@ -12,6 +12,8 @@ import VideoPlayer from './VideoPlayer';
 import { useContext } from "react";
 import VideoContext from "./design/videoContext";
 import { useNavigate } from "react-router-dom";
+import toast, { Toaster } from 'react-hot-toast';
+
 
 
 
@@ -44,10 +46,12 @@ const Hero = () => {
       method: 'POST',
       body: formData,
     });
-  
+    
     const data = await response.json();
     Responsee = data;
-    console.log(data);
+    toast.success('Upload Successful!');
+    
+    // console.log(data);
     let videoUrl = Responsee.result[0].video;
     let AnimeName0 = Responsee.result[0].filename;
     let TimeStamp0 = Responsee.result[0].from;
@@ -102,7 +106,7 @@ const Hero = () => {
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
             Unleash the power of AnimeLens, Find your Anime with episode number
           </p>
-
+          <Toaster />
           <Button href="https://www.patreon.com/user/membership?u=100692168" white >
             Gimme money i am broke!!
           </Button>
@@ -114,7 +118,7 @@ const Hero = () => {
           </Button> */}
           <Button >
             
-          <label htmlFor="fileInput" className="inline-flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-md cursor-pointer hover:bg-blue-700">
+          <label htmlFor="fileInput" className="inline-flex items-center justify-center px-4 py-2  text-white rounded-md cursor-pointer hover:bg-blue-700">
               <span>Upload Image</span>
               <input id="fileInput" type="file" className="hidden" accept=".png, .jpg, .jpeg" onChange={handleFileChange}/>
           </label>

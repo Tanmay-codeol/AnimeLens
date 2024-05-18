@@ -6,11 +6,43 @@ import { navigation } from "../constants";
 import Button from "./Button";
 import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
-import { useState } from "react";
+import { useState , useEffect} from "react";
+import { getAuth , signInWithPopup , GoogleAuthProvider, onAuthStateChanged} from "firebase/auth";
 
 const Header = () => {
+  const auth = getAuth();
+  const provider = new GoogleAuthProvider();
+  const [user, setUser] = useState(null);
   const pathname = useLocation();
   const [openNavigation, setOpenNavigation] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
+
+    return () => unsubscribe();
+    });
+
+  const handleSignUp = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        setUser(result.user);
+
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        
+        
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        console.log(user); // Log the user info to the console
+      })
+      .catch((error) => {
+        console.error(error); // Log any errors to the console
+      }); 
+  };  
+
 
   const toggleNavigation = () => {
     if (openNavigation) {
@@ -67,23 +99,26 @@ const Header = () => {
           <HamburgerMenu />
         </nav>
 
-        <a
-          href="#signup"
-          className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block"
-        >
-          New account
-        </a>
-        <Button className="hidden lg:flex" href="#login">
-          Sign in
-        </Button>
-
-        <Button
-          className="ml-auto lg:hidden"
-          px="px-3"
-          onClick={toggleNavigation}
-        >
-          <MenuSvg openNavigation={openNavigation} />
-        </Button>
+        {user ? (
+  <div className="avatar">
+  <div className="w-16 h-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 overflow-hidden">
+    <img src={user.photoURL} alt={user.displayName} />
+  </div>
+</div>
+) : (
+<>
+  <a
+    href="#"
+    className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block"
+    onClick={handleSignUp}
+  >
+    New account
+  </a>
+  <Button className="hidden lg:flex" href="#" onClick={handleSignUp}>
+    Sign in 
+  </Button>
+  </>
+)}
       </div>
     </div>
   );
