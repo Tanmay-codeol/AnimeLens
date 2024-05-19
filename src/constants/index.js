@@ -1,3 +1,11 @@
+import Kard1 from "../assets/benefits/card-1.svg";
+import Kard2 from "../assets/benefits/card-2.svg";
+import Kard3 from "../assets/benefits/card-3.svg";
+import Kard4 from "../assets/benefits/card-4.svg";
+import Kard5 from "../assets/benefits/card-5.svg";
+import Kard6 from "../assets/benefits/card-6.svg";
+
+
 import {
   benefitIcon1,
   benefitIcon2,
@@ -239,7 +247,7 @@ export const benefits = [
     id: "0",
     title: "Search Using Random Anime Pic",
     text: "Just upload the image and get the anime name and episode number. ",
-    backgroundUrl: "./src/assets/benefits/card-1.svg",
+    backgroundUrl: Kard1,
     iconUrl: benefitIcon1,
     imageUrl: benefitImage2,
   },
@@ -247,7 +255,7 @@ export const benefits = [
     id: "1",
     title: "Image URL Support",
     text: "You can also provide the URL of the image to get the anime name and episode number",
-    backgroundUrl: "./src/assets/benefits/card-2.svg",
+    backgroundUrl: Kard2,
     iconUrl: benefitIcon2,
     imageUrl: benefitImage2,
     light: true,
@@ -256,7 +264,7 @@ export const benefits = [
     id: "2",
     title: "Customize Your Search",
     text: "Easily tailor your anime search by specifying genres, characters, or themes. Find the perfect anime match to suit your preferences(coming soon)",
-    backgroundUrl: "./src/assets/benefits/card-3.svg",
+    backgroundUrl: Kard3,
     iconUrl: benefitIcon3,
     imageUrl: benefitImage2,
   },
@@ -264,7 +272,7 @@ export const benefits = [
     id: "3",
     title: "Instant Recommendations",
     text: "Discover new anime gems with our personalized recommendation engine. Receive tailored suggestions based on your viewing history and preferences.",
-    backgroundUrl: "./src/assets/benefits/card-4.svg",
+    backgroundUrl: Kard4,
     iconUrl: benefitIcon4,
     imageUrl: benefitImage2,
     light: true,
@@ -273,7 +281,7 @@ export const benefits = [
     id: "4",
     title: "Simplified Interface",
     text: "Navigate effortlessly through our user-friendly interface. Enjoy a seamless browsing experience as you explore and discover your favorite anime titles.",
-    backgroundUrl: "./src/assets/benefits/card-5.svg",
+    backgroundUrl: Kard5,
     iconUrl: benefitIcon1,
     imageUrl: benefitImage2,
   },
@@ -281,7 +289,7 @@ export const benefits = [
     id: "5",
     title: "Affordable Plans",
     text: "Unlock unlimited anime discovery without breaking the bank. Choose from our range of budget-friendly subscription options and enjoy all the features AnimeLens has to offer.",
-    backgroundUrl: "./src/assets/benefits/card-6.svg",
+    backgroundUrl: Kard6,
     iconUrl: benefitIcon2,
     imageUrl: benefitImage2,
   },
