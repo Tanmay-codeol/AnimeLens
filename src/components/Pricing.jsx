@@ -51,8 +51,8 @@ const Pricing = () => {
           </a>
 
           <Heading
-          tag="Nerd Stuff"
-          title="Https rate Limits"
+          tag="Https Rate Limits"
+          title="Nerd Stuff"
           text={`The server has a global request rate limit of 60/min per IP address. Regardless of which endpoint you're calling. This is always counted by IP address, even if you request with premium accounts.Personally i think this limit cant be reached by a single user without trying to abuse the system using multiple calls by some custom made api's or scripts. 
 
           The rate limit info is included in the HTTP header. If you hit this HTTP rate limit, request would fail with HTTP 429 (Too Many Requests). This had to be done as a security measure to prevent abuse of the system. I hope you Understand and respect the rules. Thanks for your cooperation.`}
