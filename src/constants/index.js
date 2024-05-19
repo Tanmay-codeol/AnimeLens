@@ -48,11 +48,6 @@ export const navigation = [
     url: "#pricing",
   },
   {
-    id: "2",
-    title: "How to use",
-    url: "#how-to-use",
-  },
-  {
     
   },
   {
@@ -219,11 +214,11 @@ export const pricing = [
     id: "1",
     title: "Premium ",
     description: "Subscription-based model to support me , (same as basic , no extra features)",
-    price: "9.99",
+    price: "9.99/mo",
     features: [
       "Almost unlimited usage (check out nerd stuff for more info)",
       "Help me build in gaming pc",
-      "No additional costs or hidden fees",
+      "Your name in future projects as a supporter",
     ],
   },
   {
@@ -234,7 +229,7 @@ export const pricing = [
     features: [
       "Almost unlimited usage (check out nerd stuff for more info)",
       "Help me build in gaming pc",
-      "No additional costs or hidden fees",
+      "Your name in future projects as a supporter",
     ],
   },
 ];
@@ -297,13 +292,13 @@ export const socials = [
     id: "0",
     title: "Discord",
     iconUrl: discordBlack,
-    url: "#",
+    url: "https://discord.com/users/710832712486748220",
   },
   {
     id: "1",
     title: "Twitter",
     iconUrl: twitter,
-    url: "#",
+    url: "https://twitter.com/Tanmay_Codeol",
   },
   {
     id: "2",
@@ -315,12 +310,12 @@ export const socials = [
     id: "3",
     title: "Telegram",
     iconUrl: telegram,
-    url: "#",
+    url: "https://t.me/codeol123",
   },
   {
     id: "4",
     title: "Facebook",
     iconUrl: facebook,
-    url: "#",
+    url: "#WhoTheHellUsesFacebook",
   },
 ];

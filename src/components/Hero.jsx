@@ -58,7 +58,6 @@ const Hero = () => {
     let Episode0 = Responsee.result[0].episode;
     let AniList0 = Responsee.result[0].anilist;
 
-    console.log(AniList0, Episode0, TimeStamp0, AnimeName0, videoUrl);
     setVideoUrl(videoUrl);
     setAnimeName(cleanAnimeName(AnimeName0));
     setTimeStamp(TimeStamp0);

@@ -36,7 +36,6 @@ const Header = () => {
         const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
-        console.log(user); // Log the user info to the console
       })
       .catch((error) => {
         console.error(error); // Log any errors to the console

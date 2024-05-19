@@ -99,9 +99,13 @@ const Services = () => {
           title="Like the result?? Share it with your friends!!"
           text="You can also donate me at tanmaysharma0852@okaxis (upi) , or patreon if you want to support me at https://www.patreon.com/user/membership?u=100692168 "
         />
-          <div className="relative z-1 grid gap-5 lg:grid-cols-2">
-            <div className="relative min-h-[39rem] border border-n-1/10 rounded-3xl overflow-hidden">
-              <div className="absolute inset-0">
+        <Heading
+        title = "Unable to locate the desired content? "
+        text = "We recommend not to use an art image and try again with a snippet which actually appeared in the anime to get better results!!!"
+        />
+          {/* <div className="relative z-1 grid gap-5 lg:grid-cols-2"> */}
+            {/* <div className="relative min-h-[39rem] border border-n-1/10 rounded-3xl overflow-hidden"> */}
+              {/* <div className="absolute inset-0">
                 <img
                   src={service2}
                   className="h-full w-full object-cover"
@@ -109,18 +113,18 @@ const Services = () => {
                   height={750}
                   alt="robot"
                 />
-              </div>
+              </div> */}
               
-              <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-b from-n-8/0 to-n-8/90 lg:p-15">
+              {/* <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-b from-n-8/0 to-n-8/90 lg:p-15">
                 <h4 className="h4 mb-4">Photo editing</h4>
                 <p className="body-2 mb-[3rem] text-n-3">
                   Automatically enhance your photos using our AI app&apos;s
                   photo editing feature. Try it now!
                 </p>
-              </div>
+              </div> */}
 
-              <PhotoChatMessage />
-            </div>
+              {/* <PhotoChatMessage /> */}
+            {/* </div> */}
             
             {/* <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem]">
               <div className="py-12 px-4 xl:px-8">
@@ -167,7 +171,7 @@ const Services = () => {
               </div>
             </div> */}
 
-          </div>
+          {/* </div> */}
 
           <Gradient />
         </div>

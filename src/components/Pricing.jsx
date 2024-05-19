@@ -15,7 +15,8 @@ const Pricing = () => {
             className="relative z-1"
             width={255}
             height={255}
-            alt="Sphere"
+
+            alt="Description" onContextMenu={(e) => e.preventDefault()} 
           />
           <div className="absolute top-1/2 left-1/2 w-[60rem] -translate-x-1/2 -translate-y-1/2 pointer-events-none">
             <img
