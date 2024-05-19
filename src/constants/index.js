@@ -222,7 +222,7 @@ export const pricing = [
     id: "1",
     title: "Premium ",
     description: "Subscription-based model to support me , (same as basic , no extra features)",
-    price: "9.99/mo",
+    price: "9.99",
     features: [
       "Almost unlimited usage (check out nerd stuff for more info)",
       "Help me build in gaming pc",
